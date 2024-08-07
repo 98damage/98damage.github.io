@@ -44,11 +44,7 @@
 
         function copyToClipboard(elementId) {
             var text = document.getElementById(elementId).innerText
-            navigator.clipboard.writeText(text).then(function () {
-                alert('Copied to clipboard: ' + text);
-            }, function (err) {
-                console.error('Could not copy text: ' + err);
-            });
+            navigator.clipboard.writeText(text)
         }
 
     </script>
