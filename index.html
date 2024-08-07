@@ -14,9 +14,43 @@
 </head>
 
 <body>
-    <div class="container">
-        hello, world hi
+    <div class="wrapper">
+        <div class="container containerPad">
+            <h1 class="display-3 fw-bold">Frog Buttress Stickers</h1>
+            <p class="fs-3 text-center">
+                $5 each. Represent your favourite crag!
+            </p>
+            <br>
+            <p class="fs-3 fw-bold">
+                Bank Transfer<br>
+            </p>
+            <p class="fs-3">
+                BSB: <span id="bsb">064087</span>
+                <button type="button" class="btn btn-secondary btn-sm"
+                    onclick="copyToClipboard('bsb')">Copy</button><br>
+                Account Number: <span id="accNumber">10085597</span>
+                <button type="button" class="btn btn-secondary btn-sm"
+                    onclick="copyToClipboard('accNumber')">Copy</button><br>
+                Account Name: <span id="accName">Dylan Glavas</span>
+                <button type="button" class="btn btn-secondary btn-sm"
+                    onclick="copyToClipboard('accName')">Copy</button><br>
+            </p>
+        </div>
     </div>
+
+    <script>
+
+        function copyToClipboard(elementId) {
+            var text = document.getElementById(elementId).innerText
+            navigator.clipboard.writeText(text).then(function () {
+                alert('Copied to clipboard: ' + text);
+            }, function (err) {
+                console.error('Could not copy text: ' + err);
+            });
+        }
+
+    </script>
+
 </body>
 
 </html>
